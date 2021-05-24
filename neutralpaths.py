@@ -2,7 +2,7 @@
 
 import RNA
 import RNAblueprint as rbp
-from azoarcus.pseudoknots import pKiss
+from utils.pseudoknots import pKiss
 import argparse
 import math
 from Bio import SeqIO, Seq
@@ -71,11 +71,6 @@ def test_estimate(sequence, samples=1000):
     print(f"d = {0.75*len(sequence)}, rel. error = {abs(avg-0.75*len(sequence))/(0.75*len(sequence))}")
 
 
-
-
-
-
-
 def neutralpath(sequence, stop_at=1000, rid=None):
     _, structure = pKiss(sequence)
 
@@ -128,7 +123,6 @@ def neutralpath(sequence, stop_at=1000, rid=None):
             dg.revert_sequence()
 
     return neutral_length, components, structure, dg.get_sequence(), rid
-
 
 
 if __name__ == "__main__":

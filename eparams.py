@@ -1,7 +1,7 @@
 #!/bin/env python3
 
 import RNA
-from azoarcus import pseudoknots
+from utils import pseudoknots
 import argparse
 import sys
 

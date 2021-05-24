@@ -1,6 +1,6 @@
 #!/bin/env python3
 
-import dotplot as dplot
+import utils.bppm as bpp
 import RNA
 import numpy as np
 
@@ -76,9 +76,9 @@ def ensemble_defect(structure, bppmatrix):
 #   - designs close to either one of the targets were considered valuable.
 if __name__ == "__main__":
     # scenario 1
-    pkbppm = dplot.dbn_to_bppm(pkstruct)
+    pkbppm = bpp.dbn_to_bppm(pkstruct)
     # scenario 2a
-    bppms = [dplot.dbn_to_bppm(structure) for structure in pksplit]
+    bppms = [bpp.dbn_to_bppm(structure) for structure in pksplit]
     # scenario 2b
     spbppm = (bppms[0] + bppms[1])/2
 
